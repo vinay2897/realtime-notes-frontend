@@ -1,0 +1,8 @@
+<div class="container" [formGroup]="loginForm">
+    <div class="frame">
+        <div class="title">Login</div>
+        <div class="form-el"> Email ID: <input class="inp" type="email" formControlName="email"> </div>
+        <div class="form-el"> Password: <input class="inp" type="password" formControlName="password"> </div>
+        <div class="submit btn" (click)="submit()">Login</div>
+    </div>
+</div>

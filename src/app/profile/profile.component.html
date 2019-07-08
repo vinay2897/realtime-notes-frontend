@@ -1,0 +1,35 @@
+<div class="frame">
+    <div class="buttons">
+            <div class="el">
+                    <button class="btn" (click)="createNote()">Create Note</button>
+                </div>
+                <div class="el">
+                    <button class="btn" (click)="getAllNotes()">Get all Notes</button>
+                </div>
+                <div class="el">
+                    <div class="loading" *ngIf="loading">Loading...</div>
+                </div>
+    </div>
+
+</div>
+
+<!--  -->
+
+<div class="content">
+    <div class="all-notes" *ngIf="allNotes && allNotes.length > 0">
+        <div class="resource" *ngFor="let i of allNotes">
+            <div  class="rid">{{ i.rid }}</div><button class="btn" (click)="accessNote(i.rid)">Access</button>
+        </div>
+    </div>
+
+    <!--  -->
+    <div class="current-note" *ngIf="currentNote">
+        <div>
+            <textarea class="note" #content [(ngModel)]="note" (input)="test(content.value)"></textarea>
+        </div>
+        <div [formGroup]="shareForm">
+            <input formControlName="shareWith" class="inp share-inp" type="text">
+            <button class="btn" (click)="shareNote()">share</button>
+        </div>
+    </div>
+</div>

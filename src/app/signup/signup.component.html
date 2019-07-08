@@ -1,0 +1,8 @@
+<div class="container" [formGroup]="signupForm">
+    <div class="frame">
+        <div class="title">Signup</div>
+            <div class="form-el"> Email ID: <input class="inp" type="email" formControlName="email"> </div>
+            <div class="form-el"> Password: <input class="inp" type="password" formControlName="password"> </div>
+            <div class="submit btn" (click)="submit()">Signup</div>
+    </div>
+</div>
